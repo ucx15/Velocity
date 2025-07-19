@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "frontend",
+      "problemMatcher": [],
+      "label": "Vite Frontend",
+      "detail": "vite"
+    },
+    {
+      "type": "npm",
+      "script": "dev",
+      "path": "backend",
+      "problemMatcher": [],
+      "label": "Backend Dev Server",
+      "detail": "dev"
+    },
+    {
+      "type": "npm",
+      "script": "watch",
+      "path": "backend",
+      "problemMatcher": [],
+      "label": "tsc watch - backend",
+      "detail": "watch"
+    },
+	{
+		"label": "Start All",
+		"dependsOn": [
+			"Backend Dev Server",
+			"tsc watch - backend",
+			"Vite Frontend"
+		],
+
+		"dependsOrder": "parallel",
+		"problemMatcher": [
+			"$eslint-stylish"
+		],
+
+		"group": {
+			"kind": "build",
+			"isDefault": true
+		}
+	}
+
+  ]
+}
