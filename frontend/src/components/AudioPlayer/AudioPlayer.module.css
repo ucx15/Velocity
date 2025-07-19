@@ -1,4 +1,4 @@
-.custom-player {
+.AudioPlayer {
   max-width: 600px;
   margin: 40px auto;
   padding: 20px;
@@ -14,7 +14,7 @@
   gap: 12px;
 }
 
-.play-btn {
+.playBtn {
   font-size: 24px;
   background: none;
   border: none;
@@ -28,11 +28,16 @@
   color: #333;
 }
 
-.progress-container {
+.progressContainer {
   position: relative;
   flex: 1;
   height: 4px;
   margin: 0 8px;
+
+    background: #ddd;
+  position: relative;
+  height: 8px;
+  border-radius: 4px;
 }
 
 .buffered {
@@ -45,7 +50,7 @@
   border-radius: 2px;
 }
 
-.progress-bar {
+.progressBar {
   position: relative;
   width: 100%;
   height: 4px;
@@ -55,7 +60,7 @@
   z-index: 2;
 }
 
-.progress-bar::-webkit-slider-thumb {
+.progressBar::-webkit-slider-thumb {
   appearance: none;
   width: 12px;
   height: 12px;
@@ -65,7 +70,7 @@
   margin-top: -4px;
 }
 
-.volume-slider {
+.volumeSlider {
   width: 80px;
   cursor: pointer;
   appearance: none;
@@ -74,7 +79,7 @@
   height: 4px;
 }
 
-.volume-slider::-webkit-slider-thumb {
+.volumeSlider::-webkit-slider-thumb {
   appearance: none;
   width: 10px;
   height: 10px;
@@ -82,30 +87,4 @@
   border-radius: 50%;
   border: none;
   margin-top: -3px;
-}
-
-.song-info {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-
-.cover-art {
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
-  object-fit: cover;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-.song-title {
-  font-weight: bold;
-  font-size: 16px;
-  color: #222;
-}
-
-.song-artist {
-  font-size: 14px;
-  color: #666;
 }
