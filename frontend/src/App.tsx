@@ -1,19 +1,23 @@
 // import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Home from "./pages/Home/Home"
 import Song from "./pages/Song/Song"
-
 
 // Pages
 
 const App = () => {
 	return (
-		<div>
-			{/* TODO: Make different pages for different UIs and functionalites. */}
+		<div className="App">
 			<h1 style={{ fontSize: '3.6rem' }}>Velocity</h1>
 
-
-			<Song/>
-
+			{/* Router for different pages */}
+			<Router>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/song" element={<Song />} />
+				</Routes>
+			</Router>
 		</div>
 	)
 }
