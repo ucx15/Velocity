@@ -16,7 +16,7 @@ const SongSchema = new mongoose.Schema({
 		required: false,
 	},
 	duration: {
-		type: Number, // Duration in seconds
+		type: Number,
 		required: true,
 	},
 	genre: {
@@ -33,7 +33,7 @@ const SongSchema = new mongoose.Schema({
 const Song = mongoose.model("Song", SongSchema);
 
 
-
+// useful methods for the Song model
 const add = async (song : SongData) => {
 	if (!song.title || !song.artist || !song.filePath || song.duration <= 0) {
 		throw new Error("Invalid song data");
@@ -43,4 +43,8 @@ const add = async (song : SongData) => {
 	await newSong.save();
 };
 
-export default { Song, add };
+const getAll = async () => {
+	return await Song.find({});
+};
+
+export default { Song, add, getAll };
