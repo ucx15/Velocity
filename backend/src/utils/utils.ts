@@ -1,19 +1,19 @@
-import path from 'path';
 import fs from 'fs';
 
+function findMusicFiles(dir: string) {
+  const files = fs.readdirSync(dir)
+    .filter(file =>
+      file.endsWith('.flac') ||
+      file.endsWith('.aiff') ||
+      file.endsWith('.mp3')  ||
+      file.endsWith('.ogg')  ||
+      file.endsWith('.aac')  ||
+      file.endsWith('.m4a')  ||
+      file.endsWith('.wav')
+    );
 
-function listMusicFiles(dir : string) {
-  return fs.readdirSync(dir).filter(file => file.endsWith('.mp3') || file.endsWith('.wav') || file.endsWith('.flac'));
-  // return fs.readdirSync(dir);
+  return files.map(file => (`${dir}/${file}`));
 }
 
-function findMusicFiles(dir : string) {
-  const files = listMusicFiles(dir);
-  return files.map(file => ({
-	name: file,
-	path: `${dir}/${file}`
-  }));
-}
 
-
-export {listMusicFiles, findMusicFiles };
+export { findMusicFiles };
