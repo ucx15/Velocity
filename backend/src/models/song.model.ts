@@ -47,4 +47,10 @@ const getAll = async () => {
 	return await Song.find({});
 };
 
-export default { Song, add, getAll };
+const getTitles = async () => {
+	return await Song.find({}, {__id: 1, title:1, artist:1, duration:1});
+};
+
+
+
+export default { Song, add, getAll, getTitles };

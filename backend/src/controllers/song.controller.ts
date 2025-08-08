@@ -4,7 +4,8 @@ import Song from '../models/song.model.js';
 
 const getAllSongs = async (req: Request, res: Response) => {
 	try {
-		const songs = await Song.getAll();
+		// const songs = await Song.getAll();
+		const songs = await Song.getTitles();
 		res.status(200).json(songs);
 	}
 	catch (error) {
