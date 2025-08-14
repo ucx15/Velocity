@@ -1,43 +1,30 @@
 import React from 'react'
 
 
-import { useEffect, useState } from "react"
+// Components
+import SongsList from "./SongsList"
+
 import styles from "./home.module.css"
 
-
-type SongListItem = {
-	title: string;
-	artist: string;
-	duration : number;
-
-}
-
+import type {SongListItem} from "../../Types/SongListItem"
 
 const Home = () => {
 
-	const [songsList, setSongsList] = useState<[SongListItem]>();
+	const [songs, setSongs] = React.useState<[SongListItem]>();
 
-	useEffect(() => {
+	React.useEffect(() => {
 		fetch("http://localhost:5000/api/songs")
 			.then(resp => {
 				return resp.json();
 			})
 			.then(data => {
-				setSongsList(data);
+				setSongs(data);
 			});
 	}, [])
 
 	return (
 		<div className={styles.Home}>
-
-			{songsList && songsList.map((song, index) => (
-				<div key={index}>
-					<h2>{song.title}</h2>
-					<p >{song.artist}</p>
-					<p >{song.duration}s</p>
-				</div>
-			))}
-
+			<SongsList data={songs}/>
 		</div>
 	)
 }

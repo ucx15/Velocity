@@ -1,4 +1,8 @@
-// import React from 'react'
+import React from 'react'
+
+import { useParams } from 'react-router-dom';
+// import { useParams, useNavigate } from 'react-router-dom';
+
 
 // Components
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer"
@@ -8,19 +12,46 @@ import SongInfo from "../../components/SongInfo/SongInfo"
 
 
 const Song = () => {
-	return (
-		<div className="songPage">
-			<SongInfo
-				title="Skyfall"
-				artist="Adele"
-				cover="https://placehold.co/100x100?text=Adele+-+Skyfall"
-			/>
+	// const navigate  = useNavigate();
+	const { id } = useParams<{ id: string }>() as { id: string };
+	const [SongData, setSongData] = React.useState();
 
-			<AudioPlayer
-				songID="adele-skyfall"
-			/>
-		</div>
-	)
+	React.useEffect(() => {
+		if (!id) {
+			console.error("No song ID provided in URL");
+			return;
+		}
+
+		console.log("Song ID:", id);
+		// Fetch song details here if needed
+
+		fetch(`http://localhost:5000/api/song/${id}`)
+		.then(resp => {
+			return resp.json();
+		})
+		.then(data => {
+			setSongData(data);
+		})
+
+	}, [id]);
+
+	if (id && SongData) {
+		const placeholdURI = `https://placehold.co/100x100?text=${SongData.artist}+-+${SongData.title}`;
+
+		return (
+			<div className="songPage">
+				<SongInfo
+					title={SongData.title}
+					artist={SongData.artist}
+					cover={placeholdURI}
+				/>
+
+				<AudioPlayer
+					songID={id}
+				/>
+			</div>
+		)
+	}
 }
 
 export default Song
