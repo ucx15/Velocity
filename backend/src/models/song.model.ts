@@ -33,7 +33,7 @@ const SongSchema = new mongoose.Schema({
 const Song = mongoose.model("Song", SongSchema);
 
 
-// useful methods for the Song model
+// useful methods (Services) for the Song model
 const add = async (song : SongData) => {
 	if (!song.title || !song.artist || !song.filePath || song.duration <= 0) {
 		throw new Error("Invalid song data");
@@ -43,14 +43,22 @@ const add = async (song : SongData) => {
 	await newSong.save();
 };
 
+const get = async (SongID : string) => {
+	return await Song.findOne({ _id : SongID }, {filePath : 0});
+};
+
+const getFull = async (SongID : string) => {
+	return await Song.findOne({ _id : SongID });
+};
+
 const getAll = async () => {
 	return await Song.find({});
 };
 
 const getTitles = async () => {
-	return await Song.find({}, {__id: 1, title:1, artist:1, duration:1});
+	return await Song.find({}, {_id: 1, title:1, artist:1, duration:1});
 };
 
 
 
-export default { Song, add, getAll, getTitles };
+export default { Song, add, getAll, getTitles, get, getFull };

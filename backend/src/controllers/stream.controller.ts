@@ -1,12 +1,14 @@
 import fs from 'fs';
-
 import { Request, Response } from 'express';
 
+import Song from '../models/song.model.js';
 
-export const streamMusic = (req: Request, res: Response) => {
-  // TODO: make it work with the MUSIC_DIR env variable
 
-  const filePath = `./music/${req.params.filename}`;
+export const streamMusic = async (req: Request, res: Response) => {
+  const {id} = req.params;
+
+  const data = await Song.getFull(id);
+  const filePath : string = data?.filePath as string;
 
   fs.stat(filePath, (err, stats) => {
     if (err) return res.status(404).send('File not found');

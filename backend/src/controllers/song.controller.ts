@@ -14,4 +14,17 @@ const getAllSongs = async (req: Request, res: Response) => {
 	}
 };
 
-export { getAllSongs };
+
+const getSong = async (req: Request, res: Response) => {
+	try {
+		const {id} = req.params;
+		const data = await Song.get(id);
+		res.status(200).json(data);
+	}
+	catch (error) {
+		console.error("Error fetching songs:", error);
+		res.status(500).json({ message: "Internal server error" });
+	}
+};
+
+export { getAllSongs, getSong};
