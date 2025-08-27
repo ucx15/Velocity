@@ -12,6 +12,9 @@ import SongInfo from "../../components/SongInfo/SongInfo"
 
 // Styles
 
+// Utils
+import BACKEND_URI from "../../config"
+
 
 const Song = () => {
 	// const navigate  = useNavigate();
@@ -27,7 +30,7 @@ const Song = () => {
 		console.log("Song ID:", id);
 		// Fetch song details here if needed
 
-		fetch(`http://localhost:5000/api/song/${id}`)
+		fetch(`${BACKEND_URI}/song/${id}`)
 		.then(resp => {
 			return resp.json();
 		})

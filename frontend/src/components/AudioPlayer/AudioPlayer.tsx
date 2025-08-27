@@ -4,6 +4,9 @@ import React, { useRef, useState, useEffect, useCallback } from 'react';
 // Styles
 import styles from './AudioPlayer.module.css';
 
+// Utils
+import BACKEND_URI from '../../config';
+
 // Props for the AudioPlayer component
 interface AudioPlayerProps {
 	songID: string;
@@ -24,7 +27,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = (props : AudioPlayerProps) => {
 	const [volume, setVolume] = useState(1);
 	const [bufferedRanges, setBufferedRanges] = useState<{ start: number; end: number }[]>([]);
 
-	const streamUrl = `http://localhost:5000/api/stream/${props.songID}`;
+	const streamUrl = `${BACKEND_URI}/stream/${props.songID}`;
 
 	const updateBuffered = useCallback(() => {
 		const audio = audioRef.current;
