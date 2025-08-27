@@ -1,0 +1,29 @@
+.SongCard {
+	cursor: pointer;
+	border: 1px solid #333;
+	border-radius: 8px;
+	padding: 1rem;
+	background-color: #20232a;
+	transition: transform 0.2s;
+
+	&:hover {
+		transform: scale(1.05);
+	}
+}
+
+
+
+.title {
+	font-size: 1.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.artist {
+	margin: 0.25rem 0;
+	font-style: italic;
+}
+
+.duration {
+	font-size: 0.875rem;
+	color: #aaa;
+}

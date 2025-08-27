@@ -4,12 +4,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "./pages/Home/Home"
 import Song from "./pages/Song/Song"
 
+// Styles
+import "./App.css"
+
 // Pages
 
 const App = () => {
 	return (
 		<div className="App">
-			<h1 style={{ fontSize: '3.6rem' }}>Velocity</h1>
+			<h1 className="App-Title">Velocity</h1>
 
 			{/* Router for different pages */}
 			<Router>
@@ -18,6 +21,7 @@ const App = () => {
 					<Route path="/song/:id" element={<Song />} />
 				</Routes>
 			</Router>
+
 		</div>
 	)
 }

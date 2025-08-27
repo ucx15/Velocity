@@ -1,8 +1,10 @@
 // import React from 'react'
 
-import SongItem from './SongItem'
+import SongCard from '../../components/SongCard/SongCard'
 
 import type { SongListItem } from '../../Types/SongListItem'
+
+import styles from "./SongsList.module.css"
 
 interface SongsListProps {
   data? : SongListItem[] | undefined;
@@ -10,9 +12,9 @@ interface SongsListProps {
 
 const SongsList = ({ data }: SongsListProps) => {
   return (
-    <div>
+    <div className={styles.SongsList}>
       {data && data.map((song, index) => (
-        <SongItem key={index} {...song} />
+        <SongCard key={index} {...song} />
       ))}
     </div>
   )
