@@ -3,6 +3,8 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 // import { useParams, useNavigate } from 'react-router-dom';
 
+// Types
+import type {SongListItem} from "../../Types/SongListItem"
 
 // Components
 import AudioPlayer from "../../components/AudioPlayer/AudioPlayer"
@@ -14,7 +16,7 @@ import SongInfo from "../../components/SongInfo/SongInfo"
 const Song = () => {
 	// const navigate  = useNavigate();
 	const { id } = useParams<{ id: string }>() as { id: string };
-	const [SongData, setSongData] = React.useState();
+	const [SongData, setSongData] = React.useState<SongListItem | undefined>();
 
 	React.useEffect(() => {
 		if (!id) {
