@@ -6,7 +6,7 @@
 
 const environment = import.meta.env;
 
-const BACKEND_URI = environment.BACKEND_URI || "http://localhost:5000/api";
-console.log("Backend URI:", environment.BACKEND_URI);
+const BACKEND_URI = environment.VITE_BACKEND_URI || "http://localhost:5000/api";
+console.log("Backend URI:", environment.VITE_BACKEND_URI);
 
 export default BACKEND_URI;
