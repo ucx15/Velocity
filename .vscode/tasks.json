@@ -17,6 +17,14 @@
       "label": "Backend Dev Server",
       "detail": "dev"
     },
+    {
+      "type": "npm",
+      "script": "watch",
+      "path": "backend",
+      "problemMatcher": [],
+      "label": "tsc watch - backend",
+      "detail": "watch"
+    },
 	{
 		"label": "Start All",
 		"dependsOn": [
