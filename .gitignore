@@ -143,3 +143,5 @@ vite.config.ts.timestamp-*
 package-lock.json
 
 backend/music
+
+deploy/
