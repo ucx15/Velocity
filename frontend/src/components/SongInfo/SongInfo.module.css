@@ -1,9 +1,16 @@
 .songInfo {
+
 	display: flex;
 	align-items: center;
+
+	margin-top: 5rem;
 	gap: 16px;
 	padding: 8px;
-	background-color: #f8f9fa;
+
+	width: 50%;
+	/* background-color: #f8f9fa; */
+	background-color: black;
+	color: whitesmoke;
 	border-radius: 8px;
 	border: 4px solid #e9ecef;
 }
@@ -18,10 +25,10 @@
 .songTitle {
 	font-size: 1.2rem;
 	font-weight: bold;
-	color: #333;
+	/* color: #333; */
 }
 .songArtist {
 	font-size: 1rem;
 	font-style: italic;
-	color: #666;
+	/* color: #666; */
 }

@@ -11,6 +11,7 @@ import AudioPlayer from "../../components/AudioPlayer/AudioPlayer"
 import SongInfo from "../../components/SongInfo/SongInfo"
 
 // Styles
+import styles from './Song.module.css';
 
 // Utils
 import BACKEND_URI from "../../config"
@@ -44,7 +45,7 @@ const Song = () => {
 		const placeholdURI = `https://placehold.co/100x100?text=${SongData.artist}+-+${SongData.title}`;
 
 		return (
-			<div className="songPage">
+			<div className={styles.SongPage}>
 				<SongInfo
 					title={SongData.title}
 					artist={SongData.artist}

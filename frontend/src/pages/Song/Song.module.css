@@ -1,0 +1,12 @@
+.SongPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+
+
+	/* background-color:blueviolet; */
+
+	flex-grow: 1;
+	width: 100%;
+}

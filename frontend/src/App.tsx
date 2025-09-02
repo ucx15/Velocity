@@ -8,6 +8,16 @@ import Song from "./pages/Song/Song"
 import "./App.css"
 
 // Pages
+const Content = () => {
+	return (
+		<Router>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/song/:id" element={<Song />} />
+			</Routes>
+		</Router>
+	);
+}
 
 const App = () => {
 	return (
@@ -15,13 +25,7 @@ const App = () => {
 			<h1 className="App-Title">Velocity</h1>
 
 			{/* Router for different pages */}
-			<Router>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/song/:id" element={<Song />} />
-				</Routes>
-			</Router>
-
+			<Content />
 		</div>
 	)
 }

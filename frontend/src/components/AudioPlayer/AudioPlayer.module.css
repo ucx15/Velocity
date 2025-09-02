@@ -1,11 +1,9 @@
 .AudioPlayer {
-  max-width: 600px;
-  margin: 40px auto;
+  /* margin: 40px auto; */
+  width: 100%;
   padding: 20px;
-  border-radius: 16px;
-  background: #f5f5f5;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  font-family: Arial, sans-serif;
+  background-color: #202030;
+  color: white;
 }
 
 .controls {
@@ -25,7 +23,7 @@
   font-size: 14px;
   width: 45px;
   text-align: center;
-  color: #333;
+  /* color: #333; */
 }
 
 .progressContainer {
@@ -34,7 +32,7 @@
   height: 4px;
   margin: 0 8px;
 
-    background: #ddd;
+  background: #ddd;
   position: relative;
   height: 8px;
   border-radius: 4px;
@@ -45,7 +43,6 @@
   top: 0;
   bottom: 0;
   background: rebeccapurple;
-  opacity: 0.4;
   pointer-events: none;
   border-radius: 2px;
 }
@@ -86,5 +83,5 @@
   background: #2ecc71;
   border-radius: 50%;
   border: none;
-  margin-top: -3px;
+  /* margin-top: -3px; */
 }
