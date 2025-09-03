@@ -1,26 +1,49 @@
 .SongCard {
+	display: flex;
+	/* flex-direction: column; */
+	flex-direction: row;
+	justify-content: space-between;
+
 	cursor: pointer;
-	border: 1px solid #333;
+
+	border: 2px solid rgba(255, 255, 255, 0);
 	border-radius: 8px;
-	padding: 1rem;
-	background-color: #20232a;
-	transition: transform 0.2s;
+	padding: .5rem;
+
+	transition: all 0.1s ease-in-out;
+	border: 2px solid #ddd;
+	border-radius: 8px;
 
 	&:hover {
-		transform: scale(1.05);
+		transform: scale(1.01);
+		background:
+			linear-gradient(to right,
+				hsl(240, 40%, 20%),
+				hsl(260, 40%, 20%));
 	}
+
 }
 
+.title_artist_container {
+	flex-grow: 1;
+}
 
+.duration_container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
 
 .title {
-	font-size: 1.5rem;
-	margin-bottom: 0.5rem;
+	/* margin-bottom: 0.5rem; */
+	/* text-decoration: underline; */
 }
 
 .artist {
 	margin: 0.25rem 0;
 	font-style: italic;
+	color: #aaa;
 }
 
 .duration {

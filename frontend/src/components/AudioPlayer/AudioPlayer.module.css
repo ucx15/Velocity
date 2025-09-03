@@ -1,87 +1,146 @@
 .AudioPlayer {
-  /* margin: 40px auto; */
-  width: 100%;
-  padding: 20px;
-  background-color: #202030;
-  color: white;
+    width: 80%;
+
+    padding: .5rem 1rem;
+    background: rgba(0, 0, 0, 0.4);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+
+    color: white;
+    margin-top: auto;
 }
 
 .controls {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .playBtn {
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
+    font-size: 2.4rem;
+
+    background: none;
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.playBtn:hover {
+    transform: scale(1.05);
+}
+
+.playBtn:active {
+    transform: scale(0.95);
 }
 
 .time {
-  font-size: 14px;
-  width: 45px;
-  text-align: center;
-  /* color: #333; */
+    width: 50px;
+    text-align: center;
+    color: #bbb;
+    font-family: 'Courier New', monospace;
+    font-weight: 500;
 }
 
 .progressContainer {
-  position: relative;
-  flex: 1;
-  height: 4px;
-  margin: 0 8px;
-
-  background: #ddd;
-  position: relative;
-  height: 8px;
-  border-radius: 4px;
+    position: relative;
+    flex: 1;
+    height: 8px;
+    margin: 0 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
 }
 
 .buffered {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background: rebeccapurple;
-  pointer-events: none;
-  border-radius: 2px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to right,
+        hsl(264, 80%, 50%),
+        hsl(237, 63%, 49%)
+    );
+
+    pointer-events: none;
+
+    border-radius: 4px;
+    transition: all 0.1s ease;
 }
 
 .progressBar {
-  position: relative;
-  width: 100%;
-  height: 4px;
-  cursor: pointer;
-  appearance: none;
-  /* background: transparent; */
-  z-index: 2;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    appearance: none;
+    background: transparent;
+    z-index: 2;
+    border-radius: 4px;
 }
 
-.progressBar::-webkit-slider-thumb {
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  background: #3498db;
-  border-radius: 50%;
-  border: none;
-  margin-top: -4px;
+.progressBar::-moz-range-track {
+    background: whitesmoke;
+    height: .1rem;
+    border: none;
+}
+
+.progressBar::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background-color: hsl(234, 70%, 60%);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.volumeContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.volumeIcon {
+    font-size: 1.2rem;
+    color: #bbb;
 }
 
 .volumeSlider {
-  width: 80px;
-  cursor: pointer;
-  appearance: none;
-  background: #ccc;
-  border-radius: 2px;
-  height: 4px;
+    width: 80px;
+    cursor: pointer;
+    appearance: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    height: 6px;
+    transition: all 0.2s ease;
 }
 
-.volumeSlider::-webkit-slider-thumb {
-  appearance: none;
-  width: 10px;
-  height: 10px;
-  background: #2ecc71;
-  border-radius: 50%;
-  border: none;
-  /* margin-top: -3px; */
+.volumeSlider:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+
+.volumeSlider::-moz-range-track {
+    background: rgba(255, 255, 255, 0.1);
+    height: 6px;
+    border-radius: 4px;
+    border: none;
+}
+
+.volumeSlider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    background-color: hsl(280, 20%, 20%);
+    border-radius: 50%;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }

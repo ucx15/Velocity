@@ -18,9 +18,15 @@ const SongCard = ({ _id, title, artist, duration }: SongListItem) => {
 
 	return (
 		<div className={styles.SongCard} onClick={handleClick}>
-			<h2 className={styles.title}>{title}</h2>
-			<p className={styles.artist}>{artist}</p>
-			<p className={styles.duration}>{`${Math.floor(duration / 60)}:${String(Math.round(duration % 60)).padStart(2, '0')}`}</p>
+			<div className={styles.title_artist_container}>
+				<h3 className={styles.title}>{title}</h3>
+				<p className={styles.artist}>{artist}</p>
+			</div>
+			<div className={styles.duration_container}>
+				<h4 className={styles.duration}>
+					{`${Math.floor(duration / 60)}:${String(Math.round(duration % 60)).padStart(2, '0')}`}
+				</h4>
+			</div>
 		</div>
 	)
 }

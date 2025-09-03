@@ -3,6 +3,7 @@
 *::after {
   margin: 0;
   padding: 0;
+  outline: none;
   box-sizing: border-box;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 16px;
@@ -10,10 +11,22 @@
 
 body {
   background-color: #101012;
-  color: whitesmoke
+  color: whitesmoke;
 }
 
 
 h1{
   font-size: 3.6rem;
+}
+
+h2{
+  font-size: 2.488rem;
+}
+
+h3{
+  font-size: 1.4rem;
+}
+
+h4{
+  font-size: 1rem;
 }

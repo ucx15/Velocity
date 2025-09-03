@@ -40,6 +40,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = (props : AudioPlayerProps) => {
 				end: audio.buffered.end(i),
 			});
 		}
+		console.log('Buffered Ranges:', ranges);
 		setBufferedRanges(ranges);
 	}, []);
 
@@ -82,6 +83,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = (props : AudioPlayerProps) => {
 	return (
 		<div className={styles.AudioPlayer}>
 			<audio
+				preload='auto'
 				ref={audioRef}
 				src={streamUrl}
 				onTimeUpdate={() => setCurrentTime(audioRef.current?.currentTime || 0)}
@@ -103,7 +105,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = (props : AudioPlayerProps) => {
 					{isPlaying ? '⏸️' : '▶️'}
 				</button>
 
-				<div className={styles.time}>{formatTime(currentTime)}</div>
+				<h3 className={styles.time}>{formatTime(currentTime)}</h3>
 
 				<div className={styles.progressContainer}>
 					{duration > 0 &&
@@ -131,7 +133,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = (props : AudioPlayerProps) => {
 					/>
 				</div>
 
-				<div className={styles.time}>{formatTime(duration)}</div>
+				<h3 className={styles.time}>{formatTime(duration)}</h3>
 
 				<input
 					type="range"

@@ -29,8 +29,8 @@
 		"label": "Start All",
 		"dependsOn": [
 			"Backend Dev Server",
+      "tsc watch - backend",
 			"Vite Frontend",
-      "tsc watch - backend"
 		],
 
 		"dependsOrder": "parallel",

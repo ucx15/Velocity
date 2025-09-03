@@ -8,8 +8,11 @@
 
  .SongsList {
 	display: flex;
+	flex-direction: column;
+
 	justify-content: center;
-	flex-wrap: wrap;
-	gap: 1rem;
+	/* flex-wrap: wrap; */
+	gap: .6rem;
 	padding: 1rem;
+	width: 80%;
  }

@@ -4,9 +4,11 @@
 	align-items: center;
 	justify-content: space-between;
 
-
-	/* background-color:blueviolet; */
-
 	flex-grow: 1;
 	width: 100%;
+
+    gap: 2rem;
+
+	padding: 2rem;
+
 }
